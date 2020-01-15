@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,14 +19,14 @@ public class SeleniumWebDriver {
 		//capabilities.setCapability("marionette", true);
 		WebDriver driver= new ChromeDriver();
 		
-		File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try{
-			FileUtils.copyFile(src, new File("C:/selenium/error.png"));
-		}
-		catch(IOException e)
-		{
-			System.out.println(e.getMessage());
-		}
+//		File src =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//		try{
+//			FileUtils.copyFile(src, new File("C:/selenium/error.png"));
+//		}
+//		catch(IOException e)
+//		{
+//			System.out.println(e.getMessage());
+//		}
 		
 		//driver.get("https://www.myntra.com/login?referer=https://www.myntra.com/?gclid=CjwKCAiApOvwBRBUEiwAcZGdGHQG81a1NDN73R6wQr94vxClRd5YTSMaMmt6P-yV8VJfbjy6UnG91RoC0uMQAvD_BwE&utm_source=google&utm_medium=cpc&utm_campaign=&utm_term=myntra&utm_content=&matchtype=e");
 		//driver.findElement(By.name("email")).sendKeys("Hello");
@@ -52,8 +53,10 @@ public class SeleniumWebDriver {
 //		{
 //			System.out.println("Check is on");
 //		}
-				
+		driver.get("https://www.facebook.com");
+		driver.findElement(By.cssSelector("#u_0_m"));
 		
+				
 		
 		
 	}
